@@ -14,7 +14,10 @@
     "element-ui": "^2.13.2",
     "nuxt": "^2.14.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3"
+  },
   "description": "## Build Setup",
   "main": "nuxt.config.js",
   "keywords": [

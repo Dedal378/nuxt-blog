@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-
+  <div>
+    <h1>index main</h1>
   </div>
 </template>
 
