@@ -63,6 +63,13 @@
         }
       }
     },
+    mounted () {
+      const { message } = this.$route.query
+
+      if (message === 'login') {
+        this.$message.info('Для начала войдтие в систему')
+      }
+    },
     methods: {
       onSubmit () {
         this.$refs.form.validate(async valid => {
