@@ -6,6 +6,7 @@
   export default {
     name: "logout",
     layout: 'admin',
+    middleware: ['admin-auth'],
   }
 </script>
 
