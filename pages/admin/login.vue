@@ -66,8 +66,13 @@
     mounted () {
       const { message } = this.$route.query
 
-      if (message === 'login') {
-        this.$message.info('Для начала войдтие в систему')
+      switch (message) {
+        case 'login':
+          this.$message.info('Для начала войдтие в систему')
+          break
+        case 'logout':
+          this.$message.success('Вы успешно вышли из системы')
+          break
       }
     },
     methods: {
