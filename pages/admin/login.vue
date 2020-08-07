@@ -9,20 +9,22 @@
       ref="form"
       @submit.native.prevent="onSubmit"
     >
-      <h1>Добавить комментарий</h1>
+      <h2>Войти в панель администратора</h2>
 
       <el-form-item label="Логин" prop="login">
         <el-input
-          v-model.trim="controls.name"
+          v-model.trim="controls.login"
         />
       </el-form-item>
 
-      <el-form-item label="Пароль" prop="password">
-        <el-input
-          v-model.trim="controls.text"
-          type="password"
-        />
-      </el-form-item>
+      <div class="mb-2">
+        <el-form-item label="Пароль" prop="password">
+          <el-input
+            v-model.trim="controls.password"
+            type="password"
+          />
+        </el-form-item>
+      </div>
 
       <el-form-item>
         <el-button
@@ -31,7 +33,7 @@
           round
           :loading="loading"
         >
-          Добавить комментарий
+          Войти
         </el-button>
       </el-form-item>
     </el-form>
@@ -45,23 +47,35 @@
     layout: "empty",
     data () {
       return {
+        loading: false,
         controls: {
           login: '',
           password: '',
         },
         rules: {
           login: [
-            { required: true, message: 'Логин не должен быть пустым', trigger: 'blur' },
+            { required: true, message: 'Введите логин', trigger: 'blur' },
           ],
           password: [
-            { required: true, message: 'Введите ваш комментарий', trigger: 'blur' }
+            { required: true, message: 'Введите пароль', trigger: 'blur' },
+            { min: 6, message: 'Пароль должен быть не менее 6 символов', trigger: "blur" }
           ],
         }
       }
     },
     methods: {
       onSubmit () {
-        console.log('Submit')
+        this.$refs.form.validate(valid => {
+          if (valid) {
+            this.loading = true
+
+            try {
+
+            } catch (e) {
+              this.loading = false
+            }
+          }
+        })
       }
     },
   }

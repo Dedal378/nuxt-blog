@@ -23,3 +23,11 @@ html, body {
 .page-enter-active, .page-leave-active {
   transition: opacity .3s; // с плавным переходом
 }
+
+.mb {
+  margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}

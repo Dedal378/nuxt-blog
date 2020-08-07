@@ -67,7 +67,9 @@
     },
     methods: {
       creatCommentHandler () {
-        setTimeout(() => {this.canAddComment = false}, 1000)
+        setTimeout(() => {
+          this.canAddComment = false
+        }, 1000)
       }
     },
   }

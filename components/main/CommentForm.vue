@@ -69,7 +69,7 @@
               this.$message.success('Комментарий добавлен')
               this.$emit('created')
             } catch (e) {
-              console.log(e)
+              this.loading = false
             }
           }
         })
