@@ -65,12 +65,17 @@
     },
     methods: {
       onSubmit () {
-        this.$refs.form.validate(valid => {
+        this.$refs.form.validate(async valid => {
           if (valid) {
             this.loading = true
 
             try {
-
+              const formData = {
+                login: this.controls.login,
+                password: this.controls.password,
+              }
+              await this.$store.dispatch('auth/login', formData)
+              this.$router.push('/admin')
             } catch (e) {
               this.loading = false
             }
