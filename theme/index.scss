@@ -17,9 +17,9 @@ html, body {
 }
 
 .page-enter, .page-leave-active {
-  opacity: 0;
+  opacity: 0; // анимация при открытии страниц будет от 0
 }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity .3s; // с плавным переходом
 }

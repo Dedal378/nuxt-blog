@@ -47,7 +47,7 @@
         },
         rules: {
           name: [
-            { required: true, message: 'Имя не должнобыть пустым', trigger: 'blur' },
+            { required: true, message: 'Имя не должно быть пустым', trigger: 'blur' },
           ],
           text: [
             { required: true, message: 'Введите ваш комментарий', trigger: 'blur' }
