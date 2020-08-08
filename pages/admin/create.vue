@@ -18,9 +18,27 @@
         type="textarea"
         resize="none"
         rows="10"
-        v-model.trim="controls.text"
+        v-model="controls.text"
       />
     </el-form-item>
+
+    <el-button
+      class="mb"
+      type="success"
+      plain
+      @click="previewDialog = true"
+    >
+      Предпросмотр
+    </el-button>
+
+    <el-dialog
+      title="Предпросмотр"
+      :visible.sync="previewDialog"
+    >
+      <div :key="controls.text">
+        <vue-markdown>{{ controls.text }}</vue-markdown>
+      </div>
+    </el-dialog>
 
     <el-form-item>
       <el-button
@@ -42,6 +60,7 @@
     middleware: ['admin-auth'],
     data () {
       return {
+        previewDialog: false,
         loading: false,
         controls: {
           title: '',
@@ -73,7 +92,7 @@
               this.controls.text = ''
               this.controls.title = ''
               this.$message.success('Пост был успешно создан')
-            }catch (e) {} finally {
+            } catch (e) {} finally {
               this.loading = false
             }
           }
