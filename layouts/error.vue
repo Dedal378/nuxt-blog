@@ -1,5 +1,8 @@
 <template>
-
+  <div class="wrap mb-2">
+    <span class="error mb-2">Ошибка 404</span>
+    <nuxt-link to="/">Вернуться на главную</nuxt-link>
+  </div>
 </template>
 
 <script>
@@ -8,6 +11,15 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .error {
+    color: red;
+  }
 </style>
