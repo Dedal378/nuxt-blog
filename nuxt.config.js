@@ -25,6 +25,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  loading: { color: '#f76a68'},
   /*
   ** Global CSS
   */
