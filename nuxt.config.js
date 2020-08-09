@@ -14,6 +14,8 @@ export default {
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
   */
+
+
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -57,7 +59,11 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxt/http',
   ],
+  serverMiddleware: {
+    '/api': '~/api'
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
