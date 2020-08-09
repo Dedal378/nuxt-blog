@@ -1,4 +1,3 @@
-
 export default {
   /*
   ** Nuxt rendering mode
@@ -27,7 +26,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  loading: { color: '#f76a68'},
+  loading: { color: '#f76a68' },
   /*
   ** Global CSS
   */
@@ -50,8 +49,7 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+  buildModules: [],
   /*
   ** Nuxt.js modules
   */
@@ -61,9 +59,9 @@ export default {
     '@nuxtjs/pwa',
     '@nuxt/http',
   ],
-  serverMiddleware: {
-    '/api': '~/api'
-  },
+  serverMiddleware: [{
+    '/api': './server/index.js'
+  }],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
